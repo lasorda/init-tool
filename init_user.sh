@@ -33,10 +33,8 @@ cp ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py ~/.vim/
 sed -i "/.*pybind11/a'-isystem',\n'/usr/include/c++/9'," ~/.vim/.ycm_extra_conf.py
 
 # install oh my zsh final
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.zshrc
-
-echo "export PATH=$PATH:~/.local/bin" >> ~/.zshrc
+echo "export PATH=\$PATH:/usr/local/go/bin:~/.local/bin" >> ~/.zshrc
 
 echo "[ -z \"\$TMUX\"  ] && [ -n \"\$SSH_CONNECTION\"  ] && { tmux attach || exec tmux new-session && exit;  }" >> ~/.zshrc

@@ -38,6 +38,8 @@ sed -i "s/focal/$(lsb_release -c -s)/" /etc/apt/sources.list
 
 apt update && apt install -y vim git zsh curl wget python3 python3-pip tmux build-essential cmake python3-dev ctags silversearcher-ag clang-format clang gdb && apt clean all
 
+apt upgrade && apt clean all
+
 # install go
 go_version=$(curl 'https://golang.org/VERSION?m=text')
 

@@ -12,8 +12,10 @@ else
     real_user=$(whoami)
 fi
 
-# replace source.list
-apt update && apt install -y lsb-release && apt clean all
+if ! command -v lsb_release &> /dev/null
+then
+	apt update && apt install -y lsb-release && apt clean all
+fi
 
 echo "
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse

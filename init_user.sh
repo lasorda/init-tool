@@ -25,7 +25,7 @@ PATH=$PATH:~/.local/bin
 # install tmux
 curl -fLo ~/.tmux.conf https://gist.githubusercontent.com/Lasorda/781d5dc339a0e6392482a95250b95f02/raw/ec7523bc603dccdd945b4bb8b6da81312f1e67f9/.tmux.conf
 
-echo "[ -z "$TMUX"  ] && [ -n "$SSH_CONNECTION"  ] && { tmux attach || exec tmux new-session && exit;  }" >> ~/.zshrc
+echo "[ -z \"$TMUX\"  ] && [ -n \"$SSH_CONNECTION\"  ] && { tmux attach || exec tmux new-session && exit;  }" >> ~/.zshrc
 
 # config vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -36,3 +36,7 @@ vim -c "PlugInstall" -c "q" -c "q"
 
 vim -c "GoInstallBinaries" -c "q" -c "q"
 
+cp ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py ~/.vim/
+
+# fix cpp
+sed -i "/.*pybind11/a'-isystem',\n'/usr/include/c++/9'," ~/.vim/.ycm_extra_conf.py

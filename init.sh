@@ -13,7 +13,7 @@ else
 fi
 
 # replace source.list
-apt-get update && apt-get install -y lsb-release && apt-get clean all
+apt update && apt install -y lsb-release && apt clean all
 
 echo "
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
@@ -34,12 +34,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted univer
 
 sed -i "s/focal/$(lsb_release -c -s)/" /etc/apt/sources.list
 
-apt update
-
-apt install vim git -yq
-
-# install zsh
-apt install zsh curl wget -yq
+apt update && apt install -y vim git zsh curl wget python3 python3-pip tmux build-essential cmake python3-dev ctags si&& rsearcher-ag clang-format clang gdb && apt clean all
 
 # install go
 go_version=$(curl 'https://golang.org/VERSION?m=text')
@@ -48,14 +43,6 @@ wget "https://dl.google.com/go/$go_version.linux-amd64.tar.gz"
 
 tar -C /usr/local -xzf $go_version.linux-amd64.tar.gz
 
-PATH=$PATH:/usr/local/go/bin
-
 rm $go_version.linux-amd64.tar.gz
-
-# install python3 and ipython
-apt install python3 python3-pip -yq
-
-# install tmux
-apt install tmux -yq
 
 sudo -u $real_user bash -c "$(curl -fsSl https://raw.githubusercontent.com/Lasorda/init-tool/main/init_user.sh)"

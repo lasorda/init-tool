@@ -55,10 +55,6 @@ rm $go_version.linux-amd64.tar.gz
 # install python3 and ipython
 apt install python3 python3-pip -yq
 
-pip3 install ipython
-
-PATH=$PATH:~/.local/bin
-
 # install tmux
 apt install tmux -yq
 

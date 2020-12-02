@@ -4,6 +4,8 @@ set -xeuo pipefail
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" <<< Y
 
 # install go
+PATH=$PATH:/usr/local/go/bin
+
 go env -w GOPATH="$HOME/.go"
 
 echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.zshrc
@@ -15,6 +17,10 @@ source ~/.cargo/env
 
 # install python3 and ipython
 echo "export PATH=$PATH:~/.local/bin" >> ~/.zshrc
+
+pip3 install ipython
+
+PATH=$PATH:~/.local/bin
 
 # install tmux
 curl -fLo ~/.tmux.conf https://gist.githubusercontent.com/Lasorda/781d5dc339a0e6392482a95250b95f02/raw/ec7523bc603dccdd945b4bb8b6da81312f1e67f9/.tmux.conf

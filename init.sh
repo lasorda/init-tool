@@ -58,4 +58,4 @@ apt install python3 python3-pip -yq
 # install tmux
 apt install tmux -yq
 
-sudo -u $real_user bash init_user.sh
+sudo -u $real_user bash -c "$(curl -fsSl https://raw.githubusercontent.com/Lasorda/init-tool/main/init_user.sh)"

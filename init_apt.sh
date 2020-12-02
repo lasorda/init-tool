@@ -41,7 +41,7 @@ apt update && apt install -y vim git zsh curl wget python3 python3-pip tmux buil
 apt -y upgrade && apt clean all
 
 # install go
-go_version=$(curl 'https://golang.org/VERSION?m=text')
+go_version=$(curl -sS 'https://golang.org/VERSION?m=text')
 
 wget "https://dl.google.com/go/$go_version.linux-amd64.tar.gz"
 

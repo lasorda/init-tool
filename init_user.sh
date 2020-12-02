@@ -16,12 +16,12 @@ pip3 install ipython
 PATH=$PATH:~/.local/bin
 
 # install tmux
-curl -fLo ~/.tmux.conf https://gist.githubusercontent.com/Lasorda/781d5dc339a0e6392482a95250b95f02/raw/ec7523bc603dccdd945b4bb8b6da81312f1e67f9/.tmux.conf
+curl -fLosS ~/.tmux.conf https://gist.githubusercontent.com/Lasorda/781d5dc339a0e6392482a95250b95f02/raw/ec7523bc603dccdd945b4bb8b6da81312f1e67f9/.tmux.conf
 
 # config vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLosS ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-curl -fLo ~/.vimrc https://raw.githubusercontent.com/Lasorda/vimrc/master/.vimrc
+curl -fLosS ~/.vimrc https://raw.githubusercontent.com/Lasorda/vimrc/master/.vimrc
 
 vim -c "PlugInstall" -c "q" -c "q"
 

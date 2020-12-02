@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -xeuo pipefail
 
-# zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # install go
 PATH=$PATH:/usr/local/go/bin
 
@@ -41,3 +38,6 @@ cp ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py ~/.vim/
 
 # fix cpp
 sed -i "/.*pybind11/a'-isystem',\n'/usr/include/c++/9'," ~/.vim/.ycm_extra_conf.py
+
+# install oh my zsh final
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

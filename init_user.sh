@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -xeuo pipefail
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" <<< Y
+# zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install go
 PATH=$PATH:/usr/local/go/bin

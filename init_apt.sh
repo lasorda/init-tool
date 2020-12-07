@@ -49,4 +49,4 @@ tar -C /usr/local -xzf $go_version.linux-amd64.tar.gz
 
 rm $go_version.linux-amd64.tar.gz
 
-sudo -u $real_user bash -c "$(curl -fsSl https://raw.githubusercontent.com/Lasorda/init-tool/main/init_user.sh)"
+sudo -u $real_user bash -c "$(curl -fsSl https://raw.githubusercontent.com/lasorda/init-tool/main/init_user.sh)"

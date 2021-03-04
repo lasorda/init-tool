@@ -25,16 +25,11 @@ curl -fLsSo ~/.vimrc https://raw.githubusercontent.com/lasorda/vimrc/master/.vim
 
 vim -c "PlugInstall" -c "q" -c "q"
 
-vim -c "GoInstallBinaries" -c "q" -c "q"
-
-cp ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py ~/.vim/
-
-# fix cpp
-sed -i "/.*pybind11/a'-isystem',\n'/usr/include/c++/9'," ~/.vim/.ycm_extra_conf.py
-
 # install oh my zsh final
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 echo "export PATH=\$PATH:/usr/local/go/bin:~/.local/bin" >> ~/.zshrc
 
 echo "[ -z \"\$TMUX\"  ] && [ -n \"\$SSH_CONNECTION\"  ] && { tmux attach || exec tmux new-session && exit;  }" >> ~/.zshrc
+
+echo "unsetopt BEEP" >> ~/.zshrc
